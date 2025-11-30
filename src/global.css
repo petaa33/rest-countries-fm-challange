@@ -1,0 +1,26 @@
+:root {
+    /*Dark mode elements*/
+    --blue-900: hsl(209, 23%, 22%);
+    /*Dark mode background*/
+    --blue-950: hsl(207, 26%, 17%);
+    /*Light mode text*/
+    --grey-950: hsl(200, 15%, 8%);
+    /*Light mode input*/
+    --grey-400: hsl(0, 0%, 50%);
+    /*Light mode background*/
+    --grey-50: hsl(0, 0%, 99%);
+    /*Dark mode text & Light mode elements*/
+    --white: hsl(0, 100%, 100%)
+}
+
+.theme-dark {
+    --bg-primary: var(--blue-900);
+    --bg-secondary: var(--blue-950);
+}
+
+.theme-light {
+    --bg-primary: var(--white);
+    --bg-secondary: var(--grey-50);
+}
+
+
