@@ -1,0 +1,31 @@
+.container {
+    position: relative;
+    display: flex;
+    background-color: var(--bg-primary);
+    height: 100%;
+    width: 200px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    color: var(--text-color);
+    border-radius: 4px;
+}
+
+.regions {
+    background-color: var(--bg-primary);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    gap: 12px;
+    padding: 12px 0;
+    border-radius: 4px;
+}
+
+.region {
+    font-size: 16px;
+    margin: 0px 14px;
+    cursor: pointer;
+}
