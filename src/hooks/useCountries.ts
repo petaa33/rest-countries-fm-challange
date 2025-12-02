@@ -5,14 +5,13 @@ export interface ICountry {
     name: string,
     capital: string,
     region: string,
-    population: number
+    population: number,
+    code: string
 }
 
-const API_URL = "https://restcountries.com/v3.1/all?fields=name,capital,region,independent,population,flags"
+const API_URL = "https://restcountries.com/v3.1/all?fields=name,capital,region,independent,population,flags,cca3"
 
 const fetchCountries = async() => {
-    console.log("Fetching countries..");
-    
     try {
         const res = await fetch(API_URL);
         const data = await res.json();
@@ -25,7 +24,9 @@ const fetchCountries = async() => {
 }
 
 const useCountries = () => {
-    const [countries, setCountries] = useState<Array<ICountry>>([]);
+    const [allCountries, setAllCountries] = useState<Array<ICountry>>([]);
+    // Filtered countries
+    const [countries, setCountries] = useState<Array<ICountry>>(allCountries);
 
     useEffect(() => {
         fetchCountries().then(res => {
@@ -35,17 +36,33 @@ const useCountries = () => {
                     capital: c.capital[0],
                     flagUrl: c.flags.svg,
                     population: c.population,
-                    region: c.region
+                    region: c.region,
+                    code: c.cca3
                 }
 
                 return country;
             })
 
+            setAllCountries(cleanRes);
             setCountries(cleanRes);
         });
     }, []);
+ 
+    const filterByName = (name: string) => {
+        setCountries(allCountries.filter((country) => {
+            return country.name.toLowerCase().includes(name.toLocaleLowerCase());
+        }));
+    }
 
-    return countries;
+    const filterByRegion = (region: string): void => {
+        setCountries(allCountries.filter(country => country.region === region));
+    }
+
+    return {
+        countries,
+        filterByName,
+        filterByRegion
+    };
 }
 
 export default useCountries;
