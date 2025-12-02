@@ -4,20 +4,20 @@ import style from "./filterRegion.module.css";
 const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
 interface IFilterRegion {
-	filterByRegion: (region: string) => void
+  filterByRegion: (region: string) => void;
 }
 
-const FilterRegion: React.FC<IFilterRegion> = ({filterByRegion}) => {
+const FilterRegion: React.FC<IFilterRegion> = ({ filterByRegion }) => {
   const [toggled, setToggled] = useState<boolean>(false);
 
   const onToggle = () => {
-	setToggled(!toggled);
-  }
+    setToggled(!toggled);
+  };
 
   const onRegionSelect = (region: string) => {
-	filterByRegion(region);
-	setToggled(false);
-  }
+    filterByRegion(region);
+    setToggled(false);
+  };
 
   return (
     <div className={style.container} onClick={onToggle}>
@@ -27,7 +27,11 @@ const FilterRegion: React.FC<IFilterRegion> = ({filterByRegion}) => {
       {toggled && (
         <div className={style.regions}>
           {regions.map((region) => (
-            <div key={region} className={style.region} onClick={()=>onRegionSelect(region)}>
+            <div
+              key={region}
+              className={style.region}
+              onClick={() => onRegionSelect(region)}
+            >
               {region}
             </div>
           ))}
