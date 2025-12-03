@@ -3,4 +3,5 @@
     flex-direction: column;
     min-height: 100vh;
     background-color: var(--bg-secondary);
+    gap: 30px;
 }

@@ -9,7 +9,7 @@ const ThemeToggle = () => {
 
   return (
     <button className={`${style.container} ${theme}`} type="button" onClick={handleToggle}>
-      <img src={sun} alt="theme-icon" width={24} height={24} />
+      <img src={sun} alt="theme-icon" />
       <div>Dark mode</div>
     </button>
   );

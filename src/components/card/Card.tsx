@@ -1,6 +1,6 @@
 import style from "./card.module.css";
-import { ICountry } from "../../hooks/useCountries";
 import { Link } from "react-router";
+import { ICountry } from "../../types";
 
 const Card: React.FC<ICountry> = ({
   capital,
@@ -15,7 +15,7 @@ const Card: React.FC<ICountry> = ({
       <div className={style.container}>
         <img src={flagUrl} />
         <div className={style["text-container"]}>
-          <div className={style["card-name"]}>{name}</div>
+          <div className={style["card-name"]}>{name.common}</div>
           <div>
             <span>Population: </span>
             {population}
