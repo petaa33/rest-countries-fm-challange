@@ -4,10 +4,11 @@ import useCountries from '../hooks/useCountries'
 import FullWidth from '../containers/fullWidth/FullWidth'
 import FilterName from '../components/filterName/FilterName'
 import FilterRegion from '../components/filterRegion/FilterRegion'
+import { useGetAllCountriesQuery } from '../services/countries'
 
 const Home = () => {
   const {countries, filterByName, filterByRegion} = useCountries();
-  
+
   return (
     <>
       <FullWidth>
@@ -15,7 +16,7 @@ const Home = () => {
         <FilterRegion filterByRegion={filterByRegion}/>
       </FullWidth>
       <div className={style.container}>
-        {countries.map(country => <Card key={country.name} {...country} />)}
+        {countries?.map(country => <Card key={country.name.common} {...country} />)}
       </div>
     </>
   )
