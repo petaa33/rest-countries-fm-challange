@@ -10,10 +10,12 @@ const Layout: React.FC = () => {
   const {handleToggle, theme} = useContext<IThemeContext>(ThemeContext);
 
   return (
-    <div className={`${style.container} ${theme}`}>
-        <Header />
-        <Outlet />
-    </div>
+    <>
+      <Header />
+      <div className={`${style.container} ${theme}`}>
+          <Outlet />
+      </div>
+    </>
   )
 }
 

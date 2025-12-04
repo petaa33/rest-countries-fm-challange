@@ -4,7 +4,6 @@ import useCountries from '../hooks/useCountries'
 import FullWidth from '../containers/fullWidth/FullWidth'
 import FilterName from '../components/filterName/FilterName'
 import FilterRegion from '../components/filterRegion/FilterRegion'
-import { useGetAllCountriesQuery } from '../services/countries'
 
 const Home = () => {
   const {countries, filterByName, filterByRegion} = useCountries();

@@ -11,12 +11,12 @@ const Country = () => {
 
   const country = getCountryByCode(code!);
 
-  function renderObjByKey<T extends ICountryLanguages | ICountryCurrency | undefined>(
-    obj: T,
-  ): React.ReactNode | null {
-	if(!obj) {
-		return;
-	}
+  function renderObjByKey<
+    T extends ICountryLanguages | ICountryCurrency | undefined
+  >(obj: T): React.ReactNode | null {
+    if (!obj) {
+      return;
+    }
     return Object.keys(obj).map((key) => {
       const value = obj[key];
       return (
@@ -37,17 +37,19 @@ const Country = () => {
       </Link>
       <div className={style.country}>
         <div className={style.content}>
-          <img src={country?.flagUrl} className={style.content} />
+          <img src={country?.flagUrl} />
         </div>
         <div className={style.content}>
           <h1>{country?.name.common}</h1>
           <div className={style.details}>
             <div className={style.col}>
               <div>
-                <h3 className={style.label}>Offical name:</h3> {country?.name.official}
+                <h3 className={style.label}>Offical name:</h3>{" "}
+                {country?.name.official}
               </div>
               <div>
-                <h3 className={style.label}>Population:</h3> {country?.population}
+                <h3 className={style.label}>Population:</h3>{" "}
+                {country?.population}
               </div>
               <div>
                 <h3 className={style.label}>Region:</h3> {country?.region}
@@ -58,21 +60,30 @@ const Country = () => {
             </div>
             <div className={style.col}>
               <div>
-                <h3 className={style.label}>Top Level domain:</h3> {country?.tld}
+                <h3 className={style.label}>Top Level domain:</h3>{" "}
+                {country?.tld}
               </div>
-			  <div>
-				<h3 className={style.label}>Languages</h3> {renderObjByKey<ICountryLanguages | undefined>(country?.languages)}
-			  </div>
-			  <div>
-				<h3 className={style.label}>Currencies</h3> {renderObjByKey<ICountryCurrency | undefined>(country?.currencies)}
-			  </div>
+              <div>
+                <h3 className={style.label}>Languages</h3>{" "}
+                {renderObjByKey<ICountryLanguages | undefined>(
+                  country?.languages
+                )}
+              </div>
+              <div>
+                <h3 className={style.label}>Currencies</h3>{" "}
+                {renderObjByKey<ICountryCurrency | undefined>(
+                  country?.currencies
+                )}
+              </div>
             </div>
           </div>
           <div className={style.bordersContainer}>
             <h3>Border Countries:</h3>
-			<div className={style.borders}>
-				{country?.borders.map((border) => (<div className={style.border}>{border}</div>))}
-			</div>
+            <div className={style.borders}>
+              {country?.borders.map((border) => (
+                <div className={style.border}>{border}</div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

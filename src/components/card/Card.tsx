@@ -11,23 +11,21 @@ const Card: React.FC<ICountry> = ({
   code,
 }) => {
   return (
-    <Link to={`/country/${code}`}>
-      <div className={style.container}>
-        <img src={flagUrl} />
-        <div className={style["text-container"]}>
-          <div className={style["card-name"]}>{name.common}</div>
-          <div>
-            <span>Population: </span>
-            {population}
-          </div>
-          <div>
-            <span>Region: </span>
-            {region}
-          </div>
-          <div>
-            <span>Capital: </span>
-            {capital}
-          </div>
+    <Link to={`/country/${code}`} className={style.container}>
+      <img src={flagUrl} />
+      <div className={style["text-container"]}>
+        <h2 className={style["card-name"]}>{name.common}</h2>
+        <div className={style.detail}>
+          <strong>Population: </strong>
+          {population}
+        </div>
+        <div className={style.detail}>
+          <strong>Region: </strong>
+          {region}
+        </div>
+        <div className={style.detail}>
+          <strong>Capital: </strong>
+          {capital}
         </div>
       </div>
     </Link>

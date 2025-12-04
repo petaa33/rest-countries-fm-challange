@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <div className={`${style.container} ${theme}`}>
-        <div>
+        <div className={style.label}>
             Where in the world
         </div>
         <ThemeToggle />

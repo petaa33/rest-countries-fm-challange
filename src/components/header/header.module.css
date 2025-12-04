@@ -1,9 +1,32 @@
 .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: var(--bg-primary);
-    height: 56px;
-    padding: 12px 0;
+    
+    @media screen and (min-width: 480px) {
+        padding: 14px 24px;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 14px 30px;
+    }
+
+    @media screen and (min-width: 992px) {
+        padding: 14px 60px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 14px 120px;
+    }
+
+    @media screen and (min-width: 1921px) {
+        padding: 14px 200px;
+    }
+}
+
+.label {
+    font-size: 24px;
+    font-weight: 800;
 }

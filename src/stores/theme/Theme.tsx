@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
 
-const enum ThemeEnum {
+export const enum ThemeEnum {
     LIGHT,
     DARK
 }
 
-const themes = new Map<ThemeEnum, string>([
+export const themes = new Map<ThemeEnum, string>([
     [ThemeEnum.LIGHT, "theme-light"],
     [ThemeEnum.DARK, "theme-dark"]
 ]);

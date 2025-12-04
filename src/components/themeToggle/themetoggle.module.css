@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 120px;
+    width: 140px;
     padding: 10px 12px;
     background-color: var(--bg-primary);
     border-radius: 5px;
@@ -20,5 +20,10 @@
     img {
         width: 24px;
         height: 24px;
+    }
+
+    div {
+        font-weight: 700;
+        font-size: 14px;
     }
 }
