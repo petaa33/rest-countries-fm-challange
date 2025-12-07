@@ -17,6 +17,11 @@ const useCountries = () => {
     }
 
     const filterByRegion = (region: string): void => {
+        if(region === "All") {
+            setCountries(allCountries);
+            return;
+        }
+        
         setCountries(allCountries?.filter(country => country.region === region));
     }
 
