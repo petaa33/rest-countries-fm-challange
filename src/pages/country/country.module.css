@@ -103,6 +103,11 @@
     padding: 14px;
     background-color: var(--bg-primary);
     border-radius: 4px;
+
+    &:hover {
+        background-color: var(--bg-primary-hover);
+        transition: all 0.2s;
+    }
 }
 
 .label {

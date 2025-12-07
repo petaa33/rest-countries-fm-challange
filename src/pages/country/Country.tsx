@@ -82,7 +82,7 @@ const Country = () => {
             <h3>Border Countries:</h3>
             <div className={style.borders}>
               {country?.borders.map((border) => (
-                <div className={style.border}>{border}</div>
+                <Link key={border} to={`/country/${border}`} className={style.border}>{border}</Link>
               ))}
             </div>
           </div>
