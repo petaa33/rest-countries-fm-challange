@@ -1,9 +1,10 @@
-import React, { use } from "react";
+import React from "react";
 import style from "./country.module.css";
 import { Link } from "react-router";
 import useCountries from "../../hooks/useCountries";
 import { useParams } from "react-router";
 import { ICountryCurrency, ICountryLanguages } from "../../types";
+import ArrowIcon from "../../icons/ArrowIcon";
 
 const Country = () => {
   const { getCountryByCode } = useCountries();
@@ -32,12 +33,12 @@ const Country = () => {
   return (
     <div className={style.container}>
       <Link to={"/"} className={style.linkBtn}>
-        <span>ic</span>
+        <ArrowIcon />
         <span>Back</span>
       </Link>
       <div className={style.country}>
         <div className={style.content}>
-          <img src={country?.flagUrl} />
+          <img src={country?.flagUrl} className={style.flag} />
         </div>
         <div className={style.content}>
           <h1>{country?.name.common}</h1>
@@ -49,7 +50,7 @@ const Country = () => {
               </div>
               <div>
                 <h3 className={style.label}>Population:</h3>{" "}
-                {country?.population}
+                {country?.population.toLocaleString()}
               </div>
               <div>
                 <h3 className={style.label}>Region:</h3> {country?.region}

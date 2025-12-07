@@ -11,7 +11,7 @@ const FilterName: React.FC<IFilterName> = ({filterByName}) => {
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     textInputRef.current!.value = e.target.value;
-	filterByName(textInputRef.current!.value);
+	  filterByName(textInputRef.current!.value);
   };
 
   const focus = () => {
@@ -22,11 +22,11 @@ const FilterName: React.FC<IFilterName> = ({filterByName}) => {
     <div
       className={style.container}
       onClick={focus}
-      ref={textInputRef}
+      
       onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e)}
     >
       <img src={searchIcon} className={style.icon} alt="search-icon" />
-      <input type="text" placeholder="Search for a country..." />
+      <input type="text" placeholder="Search for a country..." ref={textInputRef} />
     </div>
   );
 };

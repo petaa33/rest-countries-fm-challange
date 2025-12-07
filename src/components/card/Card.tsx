@@ -17,7 +17,7 @@ const Card: React.FC<ICountry> = ({
         <h2 className={style["card-name"]}>{name.common}</h2>
         <div className={style.detail}>
           <strong>Population: </strong>
-          {population}
+          {population.toLocaleString()}
         </div>
         <div className={style.detail}>
           <strong>Region: </strong>

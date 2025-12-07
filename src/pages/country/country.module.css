@@ -32,21 +32,29 @@
     gap: 44px;
     height: 100%;
 
-    img {
-        height: 350px;
-        object-fit: cover;
-
-        @media screen and (min-width: 768px) {
-            height: 500px;
-        }
-    }
-
     h1 {
         font-weight: 800;
         font-size: 46px;
     }
 }
 
+.icon {
+    height: 18px;
+    background-color: red;
+    
+    svg {
+        fill-rule: red;
+    }
+}
+
+.flag {
+    height: 350px;
+    object-fit: cover;
+
+    @media screen and (min-width: 768px) {
+        height: 500px;
+    }
+}
 .details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -60,13 +68,18 @@
 
 .linkBtn {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: max-content;
     background-color: var(--bg-primary);
-    width: 80px;
+    width: 60px;
     padding: 14px 24px;
     border-radius: 4px;
+
+    &:hover {
+        transition: all 0.3s;
+        background-color: var(--bg-primary-hover);
+    }
 }
 
 .bordersContainer {

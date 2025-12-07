@@ -4,6 +4,7 @@
     background-color: var(--bg-secondary);
     gap: 30px;
     flex: 1 0 0;
+    padding: 30px 40px 0 40px;
     
     @media screen and (min-width: 480px) {
         padding: 30px 24px 0 24px;

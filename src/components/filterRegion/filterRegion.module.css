@@ -9,6 +9,16 @@
     padding: 0 14px;
     color: var(--text-color);
     border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.3s;
+        background-color: var(--bg-primary-hover);
+    }
+}
+
+.arrow {
+    rotate: -90deg;
 }
 
 .regions {
@@ -28,4 +38,9 @@
     font-size: 16px;
     margin: 0px 14px;
     cursor: pointer;
+
+    &:hover {
+        transition: all 0.1s;
+        background-color: var(--bg-primary-hover);
+    }
 }

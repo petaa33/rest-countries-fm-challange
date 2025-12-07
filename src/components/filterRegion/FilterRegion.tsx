@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import style from "./filterRegion.module.css";
+import ArrowIcon from "../../icons/ArrowIcon";
 
-const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+const regions = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
 
 interface IFilterRegion {
   filterByRegion: (region: string) => void;
@@ -22,7 +23,7 @@ const FilterRegion: React.FC<IFilterRegion> = ({ filterByRegion }) => {
   return (
     <div className={style.container} onClick={onToggle}>
       <span>Filter by region</span>
-      <span>ic</span>
+      <ArrowIcon className={style.arrow}/>
 
       {toggled && (
         <div className={style.regions}>

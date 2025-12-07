@@ -5,8 +5,8 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 140px;
     padding: 10px 12px;
+    gap: 12px;
     background-color: var(--bg-primary);
     border-radius: 5px;
     border: none;
@@ -23,7 +23,12 @@
     }
 
     div {
+        display: none;
         font-weight: 700;
         font-size: 14px;
+        
+        @media screen and (min-width: 480px) {
+            display: inherit;
+        }
     }
 }
